@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FaCalendarDays } from "react-icons/fa6";
-const home = () => {
+const Home = () => {
   const [todo, settodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [iteration, setIteration] = useState(1);
@@ -22,6 +22,7 @@ const home = () => {
   useEffect(() => {
     if (iteration == 0) saveToLC();
     setIteration(0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos]);
 
   const saveToLC = () => {
@@ -204,4 +205,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
